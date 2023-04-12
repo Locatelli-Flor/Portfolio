@@ -1,0 +1,9 @@
+1) Cuando el código termina de ejecutarse, hay dos referencias a objetos:
+Primero la variable students, que hace referencia al array
+Segundo, la misma variable hace referencia al string studentName, ya que está
+contenida en el array. Por lo tanto, el Garbage collector no puede eliminar
+ningun objeto
+
+2) El garbage collector gestiona la memoria. Si un objeto no tiene una referencia
+que señale a él, este queda en una lista de objetos que pueden ser eliminados. La
+eliminación de los objetos ocurre durante el tiempo de ejecución del programa.

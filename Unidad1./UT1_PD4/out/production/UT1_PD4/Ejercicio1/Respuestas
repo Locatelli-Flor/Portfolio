@@ -1,0 +1,11 @@
+Ejercicio 1
+a) La variavle de instancia es y
+b) La variable de clase es x
+¿Cuál es la salida de este código?
+
+a.y = 5
+b.y = 6
+a.x = 1
+b.x = 2
+IdentifyMyParts.x = 1
+

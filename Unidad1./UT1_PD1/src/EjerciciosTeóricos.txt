@@ -1,0 +1,7 @@
+Ejercicio 1:
+
+No, yo \npac\n.\nVos zacata \npac\n.\nYo \npac\n.
+
+Ejercicio 2:
+
+sipo ("traqueteo", 13);
