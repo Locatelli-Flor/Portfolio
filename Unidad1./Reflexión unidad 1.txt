@@ -1,0 +1,9 @@
+Reflexión de la unidad 1:
+Esta unidad me sirvió para familiariazarme con Java y su sintaxis. Los ejercicios domiciliarios fueron claves
+para aprender a usar las diferentes clases y datos en un programa. Haber estudiado C# en el semestre anterior
+me ayudó a comprender mejor a Java, dado a sus similitudes en cuanto a cómo se escriben las clases. Me sorprendió 
+particularmente que el operador == cuando se utiliza en Strings funcione distinto a C#. Comparando las referencias
+y no el contenido de las cadenas.
+El ejercicio que más me gustó hacer fue el PD10, porque tuve que ponerme a leer en la documentación cómo se
+leen y escriben archivos en Java. Hacer el ejercicio de leer cómo se hace algo en un lenguaje que estoy aprendiendo
+siempre me gustó.
