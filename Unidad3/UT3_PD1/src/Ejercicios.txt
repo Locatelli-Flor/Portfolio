@@ -1,0 +1,58 @@
+Ejercicio 1
+
+Primero se crea un nodo otroNodo
+Luego al siguiente a otroNodo se le asigna el nodo1
+Al final al siguiente al nodo 2 se le asigna el nodo 3
+
+Entonces la respuesta es la a, ya que el nodo otroNodo queda insertado al principio de la lista
+
+otroNodo -- nodo 1 -- nodo 2 -- nodo 3
+
+Ejercicio 2
+
+nodo 1 -- nodo 2 -- nodo 3
+
+nodo 1 -- otroNodo -- nodo 3
+
+nodo 1 -- nodo 3
+
+La respuesta es la c, el nodo 2 queda eliminado al final de la ejecución
+
+Ejercicio 3
+
+nodo 1 -- nodo 2 -- nodo 3
+
+otroNodo -- nodo2
+
+nodo 1 -- otroNodo -- nodo2
+
+La respuesta es la b, el nodo otroNodo queda entre el nodo 1 y el 2 al terminar la ejecución
+
+Ejercicio 4
+
+El algoritmo da error en caso de que nodoActual.siguiente sea nulo
+
+La respuesta es la c
+
+Ejercicio 5
+
+Este algoritmo da error cuando la lista está vacía ya que al asignarle el valor de nodoActual al primero,
+no se checkea en el mientras que este sea null, sino que el siguiente. No se puede usar el operador != con null
+
+La respuesta es c
+
+Ejercicio 6
+
+a) Un array ocupa 16 bytes por cantidad de elementos
+   La lista encadenada tiene 12 por cada objeto, y entre 4 y 8 por cada referencia a esos objetos
+
+
+b) En el caso del array, el largo debe de estar determinado al crearlo, y en caso de necesitar más capacidad, se tiene que
+redimensionar. Esto es una desventaja frente a la lista encadenada ya que esta no necesita redimensionarse.
+Sin embargo, teniendo en cuenta que en la UCU se tiene un aproximado de alumnos que ingresan cada año por las inscripciones, podría incorporarse
+con una capacidad estimada más un margen que cubra los ingresos luego de empezar comenzado.
+De todas maneras, como cada año ingresan alumnos, en algpun momento se tiene que cambiar el array, mientras que con la lista una vez implementada puede ser
+usada indefinidamente.
+
+
+

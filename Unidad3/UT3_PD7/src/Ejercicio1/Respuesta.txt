@@ -1,0 +1,81 @@
+Opreación Unión:
+Este algoritmo recorre un conjunto y agrega todos los elementos en otro conjunto. Luego, recorre un segundo conjunto, y se asegura que un elemento
+no esté en el conjunto a devolver antes de agregar un elemento, para no tener duplicados. En caso de que algún conjunto esté vacío, se devuelve el otro conjunto
+a operar, dado que la unión de un conjunto con el conjunto vacío es sí mismo.
+
+Precondiciones:
+- Los conjuntos de entrada están ordenados
+- Ninguno de los conjuntos es vacío
+- Los tipos de elementos que tienen los conjuntos deben ser los mismos
+
+Postcondiciones:
+- Los conjuntos a recorrer no sufren cambios
+- El conjunto de entrada no es vacío cuando alguno de los conjuntos tiene elementos
+
+Pseudocódigo:
+
+conjunto1<t>.union(Conjunto<t> conjunto2) devuelve conjunto3 de tipo conjunto<t>
+cabeza es una variable que refiere al primer nodo de un conjunto
+
+Comienzo
+Si conjunto1.esVacio hacer
+    devolver conjunto2
+Fin si
+
+Si conjunto2.esVacio hacer
+    devolver conjunto1
+Fin si
+
+Nodo<t> guia <- conjunto1.cabeza
+
+Mientras guia != nulo hacer
+    conjunto3.añadir(guia)
+    guia <- guia.siguiente
+Fin mientras
+
+Nodo<t> guia <- conjunto2.cabeza
+
+Mientras guia != nulo hacer
+    Si conjunto3.contiene(guia)
+        continuar
+    Fin si
+    conjunto3.añadir(guia)
+Fin mientras
+devolver conjunto3
+Fin
+
+Operación Intersección:
+Este algoritmo recorre un conjunto y por cada elemento, se asegura que esté en el otro conjunto y que no se haya agregado para evitar duplicados. En caso de que algún conjuntoi esté vació,
+se devuelve null porque la intersección entre un conjunto con elementos y el conjunto vació es el conjunto vacío.
+
+Precondiciones:
+- Los conjuntos de entrada están ordenados
+- Ninguno de los conjuntos es vacío
+- Los tipos de elementos que tienen los conjuntos deben ser los mismos
+
+Postcondiciones:
+- Los conjuntos de a recorrer no sufren cambios
+- El conjunto de salida es vacío cuando alguno de los conjuntos de entrada lo es
+
+Pseudocódigo:
+
+conjunto1<t>.interseccion(conjunto2) devuelve conjunto3 de tipo conjunto<t>
+cabeza es una variable que refiere al primer nodo de un conjunto
+
+
+Comienzo
+Si conjunto1.esVacío o conjunto2.esVacío hacer
+    devolver nulo
+Fin si
+
+Nodo<t> guia <- conjunto1.cabeza
+
+Mientras guia != nulo hacer
+    Si conjunto2.buscar(guia) != nulo y !conjunto3.contiene(guia) hacer
+        conjunto3.agregar(guia)
+    Fin si
+    guia <- guia.siguiente
+Fin mientras
+
+devolver conjunto3
+Fin

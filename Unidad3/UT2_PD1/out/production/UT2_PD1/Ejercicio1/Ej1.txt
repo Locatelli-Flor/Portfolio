@@ -1,0 +1,15 @@
+miFunción
+Desde i = 1 hasta N-1 hacer - orden n
+    Desde j = N hasta i+1 hacer - orden n
+        Si arreglo[j].clave < arreglo[j-1].clave entonces - orden constante
+            Intercambia(arreglo[j], arreglo[j-1]) - orden constante
+        Fin si
+    Fin desde
+Fin desde
+Fin
+
+
+Orden del si: O(1) + O(1) = O(1)
+Orden del primer desde: O(n) (orden de la condicíon) * O(1) (orden del bloque) = O(n)
+Orden del segundo desde: O(n) (orden de la condición) * O(n) (órden del bloque) = O(n^2)
+Orden del algoritmo: O(n^2)

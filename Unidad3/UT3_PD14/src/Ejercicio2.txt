@@ -1,0 +1,23 @@
+Quitar de cola
+Este algoritmo verifica si la cola está vacía comparando los índices de inicio y fin. Si lo está,
+devuelve un mensaje de error. Si no, quita el elemento y actualiza el índice de inicio.
+
+Precondiciones:
+- La cola no está vacía
+
+Postcondiciones:
+- La cola tiene un elemento menos
+- Si la cola estaba vacía antes de la operación, no se modifica la cola
+
+Pseudocódigo:
+Cola<t>.quitarDeCola(elemento de tipo elemento)
+
+Comienzo
+Si Cola.Inicio == Cola.Final hacer
+	devolver "La cola está vacía"
+Fin si
+
+elemento <- Cola.Vector[Cola.Inicio] 
+Cola.Inicio <- (Cola.Inicio + 1) mod Cola.Tamaño
+
+Fin

@@ -1,0 +1,67 @@
+Ejercicio 5.4
+
+Tiempo de ejecución de A = 150 * log(n)
+Tiempo de ejecución de B = n^2
+
+a) Cuando el número de entradas crece, las constantes no afectan, por lo que el órden de a es log n, mientras que el órden de b
+es n^2. Por lo tanto, en la gráfica se observa que n^2 tiene mayor crecimiento que log n cuando n se hace grande.
+Entonces el programa a tiene mejor garantía.
+
+b)
+
+c) Cuando n = 1000, entonces 150 * log(n) = 450 y 1000^2 = 1000000
+Entonces, conviene usar el algoritmo A
+
+d) A partir de n = 14 B tiene mayor tiempo de ejecución que A
+
+
+Ejercicio 5.5
+
+a)
+
+b) La jeraquía de operaciones sería hacer fin / 2 y luego sumar inicio, por lo que no nos quedaríamos con la mitad de la longitud
+del array
+
+c)
+
+d)
+
+Ejercicio 5.6
+
+a)
+
+b)
+
+c)
+
+Ejercicio 5.10
+
+a) O(n). Cuando n = 100 T(n) = 0,5 ms
+Si n = 500 T(500) =
+
+Ejercicio 5.11
+
+a)
+
+Ejercicio 5.12
+
+a)
+
+Ejercicio 5.13
+
+37, 2/n, n, raíz de n, n log^2(n), n log(log(n), n log(n), n log(n^2), n^1.5, n^2, n^2 log(n),
+n^3, 2^n
+
+2/n, n y raíz de n tienen crecimiento lineal
+n log^2(n), n log(log(n), n log(n) y n log(n^2) tienen crecimiento logarítmico
+n^2 y n^2 log(n) tienen crecimiento cuadrático
+
+Ejercicio 5.14
+
+a)
+
+Ejercicio 5.15
+
+a)
+
+Ejercicio 5.16

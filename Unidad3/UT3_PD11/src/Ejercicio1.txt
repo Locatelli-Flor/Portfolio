@@ -1,0 +1,42 @@
+Ordenar lista:
+Este algoritmo toma una lista desordenada y la ordena de mayor a menor, sin importar pares o impares. Luego, recorre la lista ordenada fijandose los impares, y los agrega a la lista a devolver.
+Luego hace lo mismo pero con los pares.
+
+Precondiciones:
+- La lista está desordenada
+
+Postcondiciones:
+- La lista original queda ordenada, con la misma cantidad de elementos
+- La lista a devolver está ordenada primero por impares, y luego por pares
+
+Pseudocódigo:
+
+Lista<Productos>.ordenaParesImpares() devuelve Lista2<Productoes>
+Comienzo:
+
+Si Lista.esVacía hacer
+    devolver null
+Fin si
+
+Mientras i < Lista.largo hacer
+    Mientras j < lista.largo - i - 1 hacer
+        Si Lista[j] > Lista[j + 1] hacer
+            Intercambiar Lista[j] por Lista[j + 1]
+        Fin si
+    Fin mientras
+Fin mientras
+
+Mientras i < Lista.largo hacer
+    Si i es impar hacer
+        Lista2.agregar(i)
+
+    Fin si
+Fin mientras
+
+Mientras i < Lista.largo hacer
+    Si i es par hacer
+    Lista2.agregar(i)
+Fin mientras
+
+devolver Lista2
+Fin

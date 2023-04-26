@@ -1,0 +1,22 @@
+Poner en cola
+Este algoritmo
+
+Precondiciones:
+- La cola no está llena
+
+Postcondiciones:
+- La cola tiene un elemento más si no estaba llena.
+
+Pseudocódigo:
+Cola.agregar(elemento de tipo elemento) devuelve void
+max es el tamaño máximo de la cola
+frente y final son dos índices que empiezan en 0
+
+Comienzo
+Si ((Cola.final + 1) % max == frente) hacer
+    Imprimir "La cola está llena. No se puede agregar ningún elemento."
+Si no hacer
+    Cola[final] <- elemento
+    final <- (Cola.final + 1) % max
+Fin si
+Fin

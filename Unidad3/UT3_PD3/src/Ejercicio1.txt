@@ -1,0 +1,122 @@
+Insertar un elemento en una lista:
+
+Este algoritmo recorre la lista, en caso de que no esté vacía, y cuando llega al final inserta
+el nuevo elemento. Si la lista esta vacía, el elemento se vuelve la cabeza de la lista.
+
+    Precondiciones:
+       - Existe un nuevo elemento, y es del tipo correcto de la lista
+       - La etiqueta del elemento debe ser válida
+    Postcondiciones:
+        - Si la lista estaba vacía, el elemento queda como la cabeza de la lista
+        - La lista tiene un elemento mas, que se encuentra al final de la lista
+        - El siguiente al elemento final apunta a null
+Pseudocódigo:
+
+Lista<T>.InsertarElemento(elemento:tipo elemento)
+comienzo
+Si Lista<T>.esVacía hacer
+    primero <- elemento
+    retornar
+Fin si
+
+Actual <- primero
+Mientras Actual.siguiente != null hacer
+    Actual <- Actual.siguiente
+Fin mientras
+Actual.siguiente <- elemento
+fin
+
+Buscar un elemento en la lista:
+
+Si la lista está vacía o el elemento no se encuentra, se indica que no existe
+ningún elemento con la clave a buscar. Si no está vacía, se recorre y se compara la etiqueda pedida con la de cada nodo. Si se
+encuentra una coincidencia, se retorna el elemento.
+
+Precondiciones:
+    - La etiqueta es válida
+Postcondiciones:
+    - La lista no se ve alterada
+    - En caso de ser encontrado, el elemento se retorna
+
+Pseudocódigo:
+Lista<T>.Buscar(etiqueta:tipo etiqueta) : devuelve un elemento de tipo T
+
+comeinzo
+Si Lista<T.esVacía hacer
+    devolver null
+
+Actual <- primero
+
+Mientras Actual != null hacer
+    Si Actual.etiqueta = etiqueta hacer
+        devolver Actual
+    Fin sin
+Actual <- Actual.siguiente
+Fin mientras
+    devolver null
+fin
+
+Listar todos los elementos de una lista:
+
+Este algoritmo primero se fija si la lista está vacía, en este caso termina el método. Si no,
+recorre la lista, imprimiendo todos los elementos de cada nodo.
+
+Precondiciones:
+    - La lista no está vacía
+Postcondiciones:
+    - La lista no queda alterada
+    - Se imprimen los valores de la lista, en caso de no estar vacía
+
+Pseudocódigo:
+
+Lista<T>.Imprimir() : devuelve void
+
+comienzo
+Si Lista<T>.esVacía hacer
+    devolver
+Fin si
+
+Actual <- cabeza
+
+Mientras Actual != null hacer
+    System.out.println(Actual.elemento)
+    Actual <- Actual.siguiente
+Fin mientras
+fin
+
+Eliminar un elemento de la lista dada su clave:
+
+Este algoritmo se fija que la lista no esté vacía. Si está vacía, termina el método.
+Si no, se recorre la lista comparando la clave pasada como parámetro con la de cada nodo. En caso de encontrarla,
+se elimina el nodo de la lista y se eliminan todas las referencias del objeto, en caso contrario se le hace saber al usuario.
+
+Precondiciones:
+    - La lista no está vacía
+    - La clave del elemento es correcta
+Postcondiciones:
+    - Si la lista no está vacía y se encontró el elemento, este se elmina de la lista, teniendo un elemento menos
+    - Si la lista no está vacía y no se encontró el elemento, la lista queda intacta
+
+Pseudocódigo:
+Lista<T>.Eliminar(claveElim : tipo claveElim) devuelve void
+
+comienzo
+Si Lista<T>.esVacía hacer
+    devolver
+Fin si
+
+Actual <- cabeza
+Auxiliar <- null
+
+Mientras Actual.siguiente != null hacer
+    Si Actual.siguiente.clave == claveElim
+        Auxiliar = Actual.siguiente
+        Actual.siguiente <- Actual.siguiente.siguiente
+        Auxiliar.siguiente <- null
+        devolver
+    Fin si
+    Actual <- Actual.siguiente
+Fin mientras
+System.out.println("Elemento no encontrado")
+fin
+
