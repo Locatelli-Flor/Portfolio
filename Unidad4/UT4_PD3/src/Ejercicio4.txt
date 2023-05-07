@@ -1,0 +1,31 @@
+El algoritmo para contar la cantidad de nodos del árbol que se encuentran en cierto nivel consiste en recorrer el árbol en forma
+recursiva, manteniendo un contador para llevar el control de la cantidad de nodos encontrados en el nivel deseado. Para cada
+nodo visitado, se compara el nivel actual con el nivel deseado. Si son iguales, se incrementa el contador. Si no son iguales,
+se llama al mismo procedimiento para cada hijo y se le pasa el nivel deseado disminuido en 1.
+
+Precondiciones: se debe tener un árbol existente y un nivel válido.
+Postcondiciones: se debe contar la cantidad de nodos del árbol que se encuentran en el nivel indicado.
+
+Pseudocódigo:
+ContarNodosEnNivel (nodo, nivelDeseado, contador):
+Comienzo
+contador = 0
+Si nodo == null hacer
+    devolver 0
+Fin si
+Si nodo.Obtenernivel == nivelDeseado hacer
+    contador ++
+Fin si
+Si nodo.Obtenernivel < nivelDeseado y nodo.tieneHijos hacer
+    Para cada hijo h de nodo hacer
+        ContarNodosNivel(h, nivelDeseado - 1, contador)
+    Fin para
+Fin si
+devolver contador
+Fin
+
+Análisis detallado del orden del tiempo de ejecución del algoritmo:
+El tiempo de ejecución del algoritmo depende del número de nodos en el árbol y de la profundidad del árbol. En el peor caso,
+si el árbol es una lista enlazada y el nivel deseado es el último nivel, el tiempo de ejecución será lineal, O(n),
+donde n es el número de nodos en el árbol. En el mejor caso, si el árbol tiene solo un nodo y el nivel deseado es 1, el tiempo
+de ejecución será constante, O(1). En promedio, el tiempo de ejecución será O(n log n) para árboles balanceados.

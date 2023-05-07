@@ -1,0 +1,25 @@
+Algoritmo potencia de un número
+Este algoritmo calcula la potencia de un número utilizando recursividad. El caso base es cuando el exponente es 1, que se devuelve el número,
+si no, se devuelve el número multiplicado por la llamada recurisva, restándole 1 al exponenete
+
+Precondiciones:
+- El exponente es positivo
+
+Postcondiciones:
+- Se devuelve el resultado de elevar un número al exponente
+
+Pseudocódigo:
+
+Potencia(num de tipo entero, e de tipo entero) devuelve un entero
+
+Comienzo
+Si e == 1 hacer
+    devoler n
+Fin si
+devolver(n * Potencia(n, e - 1))
+Fin
+
+// El caso base es cuando el exponente es 1, que se devuelve el mismo número, se contempla en el Si e == 1 devolver n
+// Se va a progresar el caso base siempre porque en la recursividad de llama al método con el exponente menos 1, siempre va a
+// llegar a ser 1 (si es positivo)
+

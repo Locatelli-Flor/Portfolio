@@ -1,0 +1,144 @@
+1)
+
+El algoritmo recursivo para obtener la menor clave de un árbol binario de búsqueda consiste en encontrar el nodo más a la
+izquierda del árbol, ya que este nodo tendrá la clave más pequeña. Se comienza en la raíz del árbol y se recorre el árbol
+hacia la izquierda hasta llegar a un nodo que no tenga hijo izquierdo, y ese nodo será el que tenga la menor clave.
+
+Precondiciones: El árbol binario de búsqueda no puede estar vacío.
+Postcondiciones: El algoritmo devuelve la menor clave presente en el árbol.
+
+Pseudocódigo:
+menorClaveArbolBinario(raiz: Nodo) retorna entero
+Comienzo
+    Si raiz.hijoizq es nulo entonces
+        retornar raiz.clave
+    Sino
+        retornar menorClaveArbolBinario(raiz.hijoizq)
+    Fin si
+Fin
+
+Análisis detallado del orden del tiempo de ejecución del algoritmo:
+El algoritmo recorre el árbol hacia la izquierda hasta encontrar el nodo con la menor clave. El tiempo de ejecución dependerá de
+la altura del árbol. En el peor de los casos, donde el árbol está desbalanceado y tiene una altura igual al número de nodos,
+el tiempo de ejecución será O(n). En el mejor de los casos, donde el árbol está balanceado y tiene una altura logarítmica en
+base 2 al número de nodos, el tiempo de ejecución será O(log n).
+
+2)
+
+El algoritmo Obtener la mayor clave del árbol binario de búsqueda recursivo busca y devuelve la clave del nodo con el valor más
+grande en el árbol binario de búsqueda. El algoritmo se implementa de manera recursiva y recorre el subárbol derecho del árbol
+binario de búsqueda hasta que llegue a la hoja más grande.
+
+Precondiciones: El árbol binario de búsqueda no está vacío
+Postcondiciones: Se devuelve la clave del nodo con el valor más grande en el árbol binario de búsqueda
+
+Pseudocódigo:
+ObtenerMayorClave(nodoActual):
+Comienzo
+Si nodoActual == nulo hacer
+    devolver nulo
+Sino Si nodoActual.hijoderecho == nulo hacer
+    devolver nodoActual.clave
+Sino hacer
+    devolver ObtenerMayorClave(nodoActual.hijoderecho)
+Fin si
+Fin
+
+Análisis detallado del orden del tiempo de ejecución del algoritmo:
+El tiempo de ejecución del algoritmo es O(h), donde h es la altura del árbol binario de búsqueda. En el peor de los casos,
+donde el árbol está completamente desequilibrado, el tiempo de ejecución sería O(n), donde n es el número de nodos en el árbol.
+En el mejor de los casos, donde el árbol está perfectamente equilibrado, el tiempo de ejecución sería O(log n).
+
+3)
+
+El algoritmo recibirá como parámetro la clave del nodo cuya clave anterior se desea encontrar y retornará la clave inmediata anterior a esa clave en el árbol binario de búsqueda. El algoritmo buscará la clave en el árbol, y si se encuentra el nodo, se devolverá la clave inmediata anterior a esa clave.
+
+Precondiciones: - El árbol binario de búsqueda debe estar inicializado.
+                - La clave que se desea buscar debe ser válida.
+Postcondiciones: - Se debe devolver la clave inmediata anterior a la clave buscada, si existe.
+                 - Si la clave no tiene clave inmediata anterior (porque es la clave mínima del árbol), se debe devolver null.
+
+Pseudocódigo:
+claveInmediataAnterior(raiz, clave)
+Comienzo
+Si raiz == null o clave == raiz.clave hacer
+    retornar null
+Fin si
+Si clave < raiz.clave hacer
+    retornar claveInmediataAnterior(raiz.hijoizq, clave)
+Sino hacer
+    Si raiz.hijoder == null o raiz.hijoder.clave > clave hacer
+        retornar raiz.hijoizq.clave
+    Fin si
+    retornar claveInmediataAnterior(raiz.hijoder, clave)
+Fin si
+Fin
+
+Análisis detallado del orden del tiempo de ejecución del algoritmo:
+El tiempo de ejecución del algoritmo depende del número de nodos visitados durante la búsqueda. En el peor caso, si el árbol
+está desbalanceado y tiene una profundidad de h, el tiempo de ejecución será O(h). En el mejor caso, si la clave buscada es la
+raíz del árbol, el tiempo de ejecución será O(1). En el caso promedio de un árbol binario de búsqueda balanceado, el tiempo de
+ejecución será O(log n), donde n es el número de nodos en el árbol.
+
+4) Hecho en el UT4_PD3
+
+5)
+
+El algoritmo recibirá como entrada un árbol binario de búsqueda y devolverá una lista que contiene todas las hojas del árbol
+con su respectivo nivel. El algoritmo recorrerá el árbol de manera recursiva, y por cada hoja encontrada, agregará su nivel y
+valor a una lista.
+
+Precondiciones: - El árbol binario de búsqueda debe estar inicializado.
+                - El árbol debe contener al menos una hoja.
+Postcondiciones: - El algoritmo devolverá una lista que contiene todas las hojas del árbol con su respectivo nivel.
+                 - El árbol no se modifica
+
+Pseudocódigo:
+Comienzo
+listarHojasConNivel(arbol, nivelActual, listaHojas):
+Si arbol == nulo hacer
+    retornar nulo
+Fin si
+Si arbol.hijoizq == nulo y arbol.hijoder == nulo hacer
+    listaHojas.agregar(arbol.valor + nivelActual)
+Sino hacer
+    listarHojasConNivel(arbol.hijoizq, nivelActual + 1, listaHojas)
+    listarHojasConNivel(arbol.hijoder, nivelActual + 1, listaHojas)
+Fin si
+Fin
+
+Análisis detallado del orden del tiempo de ejecución del algoritmo:
+El algoritmo recorre todo el árbol de manera recursiva y por cada hoja encontrada, agrega un elemento a la lista de hojas. En
+el peor caso, todas las hojas del árbol serán visitadas, lo que resulta en un tiempo de ejecución O(n), donde n es el número
+de nodos en el árbol. Por lo tanto, el orden de tiempo de ejecución del algoritmo es O(n).
+
+6)
+
+El algoritmo verifica si un árbol binario es de búsqueda de manera recursiva. Para hacer esto, comparamos la clave actual
+con los valores mínimo y máximo permitidos. Estos valores se actualizan en cada llamada recursiva. Si la clave actual está
+dentro del rango permitido, verificamos si los subárboles izquierdo y derecho también cumplen la propiedad de BST.
+
+Precondiciones: Árbol binario no vacío.
+Postcondiciones: Devuelve verdadero si el árbol es un BST, de lo contrario, devuelve falso.
+
+Pseudocódigo:
+esArbolDeBusqueda(raiz, min, max)
+Comienzo
+Si raiz es nulo hacer
+    devolver verdadero
+Fin si
+Si (raiz.clave < min) o (raiz.clave > max) hacer
+    devolver falso
+Fin si
+Si no esArbolDeBusqueda(raiz.izquierdo, min, raiz.clave - 1) hacer
+    devolver falso
+Fin si
+Si no esArbolDeBusqueda(raiz.derecho, raiz.clave + 1, max) hacer
+    devolver falso
+Fin si
+devolver verdadero
+Fin
+
+Análisis detallado del orden del tiempo de ejecución del algoritmo:
+En el peor de los casos, el algoritmo recorre todos los nodos del árbol.
+Cada nodo se visita una vez, por lo que la complejidad de tiempo es de O(n) siendo n la cantidad de nodos del árbol.

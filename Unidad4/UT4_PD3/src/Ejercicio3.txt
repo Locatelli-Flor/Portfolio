@@ -1,0 +1,28 @@
+El algoritmo para calcular la suma de las claves de todos los elementos de un árbol binario de búsqueda consiste en
+recorrer el árbol en forma recursiva y sumar la clave de cada nodo. Si el nodo actual es nulo, la suma es cero. Si el nodo
+tiene hijos, se llama al mismo procedimiento para cada hijo y se suma la clave del nodo actual con los resultados obtenidos
+de los hijos.
+
+Precondiciones: se debe tener un árbol binario de búsqueda existente que almacene elementos con claves de tipo entero.
+Postcondiciones: se debe calcular la suma de las claves de todos los elementos del árbol.
+
+Pseudocódigo:
+SumaClaves (nodo):
+Comienzo
+Suma = 0
+Si nodo == null hacer
+    devolver 0
+Fin si
+Si nodo.tieneHijos hacer
+    Para cada hijo h de nodo hacer
+        Suma = Suma + SumaClaves(h)
+    Fin para
+Fin si
+devolver Suma
+Fin
+
+Análisis detallado del orden del tiempo de ejecución del algoritmo:
+El tiempo de ejecución del algoritmo depende del número de nodos en el árbol y de la profundidad del árbol. En el peor caso,
+si el árbol es una lista enlazada, el tiempo de ejecución será lineal, O(n), donde n es el número de nodos en el árbol.
+En el mejor caso, si el árbol tiene solo un nodo, el tiempo de ejecución será constante, O(1). En promedio, el tiempo de
+ejecución será O(n log n) para árboles balanceados.

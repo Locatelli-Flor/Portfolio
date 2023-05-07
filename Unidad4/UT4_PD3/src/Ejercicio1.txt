@@ -1,0 +1,30 @@
+El algoritmo para insertar un nuevo nodo en un árbol consiste en encontrar la posición correcta donde el nodo debe ser agregado,
+verificando si el valor del nodo es mayor o menor que el valor de los nodos existentes en el árbol. Si el valor es menor, se
+inserta a la izquierda del nodo actual, y si es mayor, se inserta a la derecha. Si la posición deseada no está vacía, se debe
+buscar la siguiente posición vacía en la misma dirección, y el nuevo nodo se inserta allí.
+
+Precondiciones: se debe tener un árbol existente y un nuevo nodo que se desea insertar.
+Postcondiciones: el nuevo nodo debe ser insertado en la posición correcta en el árbol.
+
+Pseudocódigo:
+InsertarNodo (nodo, arbol):
+Comienzo
+Si arbol.vacio hacer:
+    raiz <- nodo
+Fin si
+Si nodo.valor < nodoActual.valor hacer
+    InsertarNodo(nodoActual.hijoizq)
+Fin si
+Si nodo.valor > nodoActual.valor hacer
+    InsertarNodo(nodoActual.hijoder)
+Fin si
+Si nodoActual == null hacer
+    nodoActual = nodo
+Fin si
+Fin
+
+Análisis detallado del orden del tiempo de ejecución del algoritmo:
+El tiempo de ejecución del algoritmo depende del número de nodos en el árbol y de la posición donde se inserte el nuevo nodo.
+En el peor caso, si el árbol no está balanceado, el tiempo de ejecución será O(n), donde n es el número de nodos en el árbol.
+Sin embargo, si el árbol está equilibrado, el tiempo de ejecución puede ser lineal, O(log n). En el mejor caso, si el árbol está
+vacío, el tiempo de ejecución será constante, O(1).

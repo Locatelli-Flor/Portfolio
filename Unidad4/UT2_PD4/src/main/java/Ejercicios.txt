@@ -1,0 +1,67 @@
+5.20:
+
+Una forma eficiente de resolver este problema es utilizando una variante del algoritmo de búsqueda binaria.
+
+Comenzamos definiendo dos variables, low y high, que representan los índices del primer y último elemento del vector, respectivamente. Luego, en cada iteración del algoritmo, calculamos el índice medio mid entre low y high. Si el valor en la posición mid es igual a mid, entonces hemos encontrado un elemento que cumple con la condición buscada y podemos retornar true. Si el valor en la posición mid es menor que mid, entonces sabemos que cualquier elemento que cumpla la condición debe estar en el subvector que comienza en mid+1 y termina en high. De lo contrario, si el valor en la posición mid es mayor que mid, entonces cualquier elemento que cumpla la condición debe estar en el subvector que comienza en low y termina en mid-1. Repetimos este proceso hasta que encontremos un elemento que cumpla la condición o hasta que el subvector se reduzca a cero.
+
+El tiempo de ejecución de este algoritmo es O(log n), donde n es el tamaño del vector. Esto se debe a que en cada iteración del algoritmo, el tamaño del subvector se reduce a la mitad.
+
+public static boolean buscaEntero(int[] arr) {
+    int low = 0;
+    int high = arr.length - 1;
+
+    while (low <= high) {
+        int mid = (low + high) / 2;
+
+        if (arr[mid] == mid) {
+            return true;
+        } else if (arr[mid] < mid) {
+            low = mid + 1;
+        } else {
+            high = mid - 1;
+        }
+    }
+
+    return false;
+}
+
+5.23:
+
+Se puede resolver este problema en O(N) utilizando el algoritmo de Moore. El algoritmo funciona en dos pasos:
+
+Buscar un candidato: Recorra el vector A y mantenga un contador que comienza en 0 y un candidato que comienza como A[0]. Si encuentra un elemento igual al candidato actual, incremente el contador. De lo contrario, decremente el contador. Si el contador llega a 0, cambie el candidato al siguiente elemento y comience el contador de nuevo. En la terminación de este primer paso, el candidato es el posible elemento mayoritario.
+
+Verificar si el candidato es realmente el elemento mayoritario: Recorra el vector A nuevamente y cuente cuántas veces aparece el candidato. Si aparece más de N/2 veces, entonces es el elemento mayoritario, de lo contrario no existe un elemento mayoritario.
+
+public static Integer encontrarElementoMayoritario(Integer[] A) {
+    int candidato = A[0];
+    int contador = 0;
+
+    // Paso 1: encontrar un candidato
+    for (int i = 0; i < A.length; i++) {
+        if (contador == 0) {
+            candidato = A[i];
+            contador = 1;
+        } else if (candidato == A[i]) {
+            contador++;
+        } else {
+            contador--;
+        }
+    }
+
+    // Paso 2: verificar si el candidato es el elemento mayoritario
+    contador = 0;
+    for (int i = 0; i < A.length; i++) {
+        if (A[i] == candidato) {
+            contador++;
+        }
+    }
+
+    if (contador > A.length / 2) {
+        return candidato;
+    } else {
+        return null; // no existe un elemento mayoritario
+    }
+}
+
+El tiempo de ejecución del algoritmo es O(N), ya que se recorre el vector dos veces en el peor caso, cada vez con una complejidad de O(N).

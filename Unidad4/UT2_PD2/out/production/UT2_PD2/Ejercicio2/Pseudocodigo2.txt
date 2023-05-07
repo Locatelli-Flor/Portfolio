@@ -1,0 +1,27 @@
+Algoritmo suma lineal
+Este algoritmo calcula la suma de los primeros n elementos de un array, siendo condición que el número sea mayor o igual a la cantidad de
+elementos del array. Utiliza una estructura recursiva, donde el caso base es cuando se retorna el primer elemento del array. Luego, se retorna el número más
+el elemento siguiente del array.
+
+Precondiciones:
+- El número es menor a la cantidad de elementos del array
+- N es positivo
+- A tiene elementos
+
+Postconidiones:
+- Se retorna la suma de los primeros n elementos del array
+- El array queda intacto
+
+Pseudocódigo:
+SumaLineal(A de tipo array de enteros, n de tipo entero) retorna un entero
+
+Comienzo
+Si n == 1 hacer
+    devolver A[0]
+Fin si
+devolver(A[n - 1] + SumaLineal(A, n - 1))
+Fin
+
+- El caso base es cuando n = 1, que se devuelve el primer elemento del array. Se contempla en Si n == 1 devolver A[0]
+- Cuando en la recursividad se llama al mismo método, se invoca con n - 1, por lo que tarde o temprano
+se llega a n = 1. (si n es positivo)

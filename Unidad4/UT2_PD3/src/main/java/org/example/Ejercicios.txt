@@ -1,0 +1,144 @@
+5.4:
+El programa A da la mejor garantía en tiempo de ejecución para valores grandes de N (N > 10000), ya que su tiempo de ejecución
+crece de manera logarítmica en lugar de cuadrática.
+
+El programa B da la mejor garantía en tiempo de ejecución para valores pequeños de N (N < 100), ya que su tiempo de ejecución
+cuadrático se hace insignificante en comparación con el tiempo logarítmico de A.
+
+Para N = 1000, el tiempo de ejecución de A sería de aproximadamente 150N log N = 1,797,689 y el tiempo de ejecución de B sería
+de aproximadamente N^2 = 1,000,000. Por lo tanto, el programa B se ejecutará más rápido en promedio para N = 1000.
+
+No es posible que el programa B se ejecute más rápidamente que el programa A en todas las posibles entradas, ya que para valores
+grandes de N, el tiempo de ejecución de B crece más rápido que el de A.
+
+5.6:
+
+Para analizar el tiempo de ejecución de los algoritmos típicos para realizar cálculos a mano, es necesario tener en cuenta que el número de operaciones necesarias para completar una tarea aumenta con el tamaño de los números que se están manipulando. En este caso, estamos considerando números de N dígitos.
+
+a) Sumar dos enteros de N dígitos:
+El algoritmo típico para sumar dos enteros de N dígitos es simplemente sumar cada par de dígitos de derecha a izquierda, propagando cualquier acarreo a la siguiente suma. Este proceso se repite hasta que se hayan sumado todos los dígitos. En el peor de los casos, se necesitarán N sumas y N-1 acarreos. Cada suma y acarreo requiere una operación básica, por lo que el tiempo de ejecución del algoritmo de suma es O(N).
+
+b) Multiplicar dos enteros de N dígitos:
+El algoritmo típico para multiplicar dos enteros de N dígitos es realizar N multiplicaciones de dígitos y N sumas, lo que resulta en un total de N^2 operaciones básicas. Por lo tanto, el tiempo de ejecución del algoritmo de multiplicación es O(N^2).
+
+c) Dividir dos enteros de N dígitos:
+El algoritmo típico para dividir dos enteros de N dígitos es similar al algoritmo que se utiliza para hacer divisiones a mano. El proceso implica dividir el número más grande por el número más pequeño, digitos por digito, y realizar la resta correspondiente en cada paso. El número de operaciones básicas necesarias depende del número de cifras necesarias para encontrar el cociente y el resto. En el peor de los casos, se necesitan N operaciones para encontrar el cociente y N*N operaciones para encontrar el resto, lo que da un total de N^2 operaciones básicas. Por lo tanto, el tiempo de ejecución del algoritmo de división es O(N^2).
+
+5.10:
+
+
+a) Si el algoritmo es lineal, se espera que el tiempo de ejecución aumente proporcionalmente con el tamaño de la entrada. Por lo tanto, se puede usar una regla de tres simple para estimar el tiempo de ejecución con una entrada de tamaño 500:
+
+- Para una entrada de tamaño 100, el tiempo de ejecución es de 0.5 ms.
+- Entonces, para una entrada de tamaño 500, el tiempo de ejecución sería:
+    0.5 ms * (500/100) = 2.5 ms
+
+Por lo tanto, con una entrada de tamaño 500, se espera que el algoritmo tarde aproximadamente 2.5 milisegundos.
+
+b) Si el algoritmo tiene una complejidad de O(log N), el tiempo de ejecución aumenta de manera logarítmica con el tamaño de la entrada. En este caso, se puede utilizar la fórmula de la complejidad para estimar el tiempo de ejecución:
+
+- Para una entrada de tamaño 100, el tiempo de ejecución es de 0.5 ms.
+- Para una entrada de tamaño 500, el tiempo de ejecución se puede estimar como:
+    (0.5 ms) * log(500) / log(100) = 0.5 ms * 2.69 = 1.345 ms
+
+Por lo tanto, con una entrada de tamaño 500, se espera que el algoritmo tarde aproximadamente 1.345 milisegundos.
+
+c) Si el algoritmo tiene una complejidad cuadrática, el tiempo de ejecución aumenta con el cuadrado del tamaño de la entrada. En este caso, se puede utilizar la fórmula de la complejidad para estimar el tiempo de ejecución:
+
+- Para una entrada de tamaño 100, el tiempo de ejecución es de 0.5 ms.
+- Para una entrada de tamaño 500, el tiempo de ejecución se puede estimar como:
+    (0.5 ms) * (500^2 / 100^2) = 12.5 ms
+
+Por lo tanto, con una entrada de tamaño 500, se espera que el algoritmo tarde aproximadamente 12.5 milisegundos.
+
+d) Si el algoritmo tiene una complejidad cúbica, el tiempo de ejecución aumenta con el cubo del tamaño de la entrada. En este caso, se puede utilizar la fórmula de la complejidad para estimar el tiempo de ejecución:
+
+- Para una entrada de tamaño 100, el tiempo de ejecución es de 0.5 ms.
+- Para una entrada de tamaño 500, el tiempo de ejecución se puede estimar como:
+    (0.5 ms) * (500^3 / 100^3) = 62.5 ms
+
+Por lo tanto, con una entrada de tamaño 500, se espera que el algoritmo tarde aproximadamente 62.5 milisegundos.
+
+5.11:
+
+a) Para un algoritmo lineal, el tiempo de ejecución es proporcional al tamaño de entrada, por lo tanto, si el tiempo de ejecución es de 0,5 milisegundos para una entrada de tamaño 100, se puede calcular el tiempo de ejecución para una entrada de tamaño N con la siguiente ecuación:
+
+0,5 milisegundos = k * 100
+k = 0,5/100 = 0,005
+
+Por lo tanto, el tiempo de ejecución para una entrada de tamaño N es:
+
+0,005N milisegundos
+
+Para calcular el tamaño de entrada que puede procesar en un minuto (60 segundos), se puede utilizar la siguiente ecuación:
+
+0,005N * X = 60 segundos
+N * X = 12 000 000
+
+Por lo tanto, un algoritmo lineal puede procesar una entrada de tamaño N = 120 000.
+
+b) Para un algoritmo O(log N), el tiempo de ejecución crece de forma logarítmica con el tamaño de entrada. Si el tiempo de ejecución es de 0,5 milisegundos para una entrada de tamaño 100, se puede calcular el tiempo de ejecución para una entrada de tamaño N con la siguiente ecuación:
+
+0,5 milisegundos * log(100) = k
+k = 0,5 * 2 = 1
+
+Por lo tanto, el tiempo de ejecución para una entrada de tamaño N es:
+
+1 * log(N) milisegundos
+
+Para calcular el tamaño de entrada que puede procesar en un minuto (60 segundos), se puede utilizar la siguiente ecuación:
+
+1 * log(N) * X = 60 segundos
+log(N) * X = 60
+N^X = 10^60
+
+Por lo tanto, un algoritmo O(log N) puede procesar una entrada de tamaño N = 2^600.
+
+c) Para un algoritmo cuadrático, el tiempo de ejecución crece cuadráticamente con el tamaño de entrada. Si el tiempo de ejecución es de 0,5 milisegundos para una entrada de tamaño 100, se puede calcular el tiempo de ejecución para una entrada de tamaño N con la siguiente ecuación:
+
+0,5 milisegundos * 100^2 / N^2 = k
+k = 0,5
+
+Por lo tanto, el tiempo de ejecución para una entrada de tamaño N es:
+
+0,5 * N^2 / 100^2 milisegundos
+
+Para calcular el tamaño de entrada que puede procesar en un minuto (60 segundos), se puede utilizar la siguiente ecuación:
+
+0,5 * N^2 / 100^2 * X = 60 segundos
+N^2 * X = 12 000 000
+N = sqrt(12 000 000 / X)
+
+Por lo tanto, un algoritmo cuadrático puede procesar una entrada de tamaño N = sqrt(12 000 000 / X).
+
+d) Para un algoritmo cúbico, el tiempo de ejecución crece cúbicamente con el tamaño de entrada. Si el tiempo de ejecución es de 0,5 milisegundos para una entrada de tamaño 100, se puede calcular el tiempo de ejecución para una entrada de tamaño N con la siguiente ecuación:
+
+0,5 milisegundos * 100^3 / N^3 = k
+k = 0,5
+
+Por lo tanto, el tiempo de ejecución para una entrada de tamaño N es:
+
+0,5 * N
+
+5.13:
+
+37 < 2/N < raiz de N < log log N < log N < log^2 N < N < N log (N^2) < N log N < N^1.5 < N^2 log N < N^2 < N^3 < 2^n < 2^N/2
+
+Las funciones que crecen a la misma velocidad son:
+
+N y raíz de N,
+N^2 y N^2 log N,
+N log N y N log (N^2),
+2^n y 2^N/2.
+
+5.16:
+
+a) La multa el día N sería 2 elevado a la potencia de N-1 euros. En otras palabras, la multa comienza en 2 euros el primer día (N=1) y luego se eleva al cuadrado cada día posterior, por lo que el segundo día (N=2) sería de 2 al cuadrado, el tercer día (N=3) sería de 2 al cubo, y así sucesivamente.
+
+b) La multa alcanzaría E euros cuando 2 elevado a la potencia de N-1 es igual a E. Resolviendo para N, obtenemos:
+
+2^(N-1) = E
+N - 1 = log_2(E)
+N = log_2(E) + 1
+
+Por lo tanto, el número de días necesarios para que la multa alcance E euros es O(log E).

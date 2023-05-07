@@ -1,0 +1,30 @@
+El algoritmo para contar todas las hojas que tiene un árbol consiste en recorrer el árbol en forma recursiva y contar
+el número de nodos que no tienen hijos. Si el nodo actual no tiene hijos, se incrementa el contador en 1. Si tiene
+hijos, se llama al mismo procedimiento para cada hijo y se suman los resultados obtenidos.
+
+Precondiciones: se debe tener un árbol existente.
+Postcondiciones: se debe contar el número de hojas que tiene el árbol.
+
+Pseudocódigo:
+ContarHojas (nodo):
+Comienzo
+Suma = 0
+Si nodo == null hacer
+    devolver 0
+Fin si
+Si nodo.hijoizq == null y nodo.hijoder == null hacer
+    devolver 1
+Fin si
+Si nodo.tienehijos
+    Para cada hijo h de nodo hacer
+        Suma = Suma + ContarHojas(h)
+    Fin para
+Fin si
+devolver Suma
+Fin
+
+Análisis detallado del orden del tiempo de ejecución del algoritmo:
+El tiempo de ejecución del algoritmo depende del número de nodos en el árbol y de la profundidad del árbol. En el peor caso,
+si el árbol es una lista enlazada, el tiempo de ejecución será lineal, O(n), donde n es el número de nodos en el árbol.
+En el mejor caso, si el árbol tiene solo un nodo, el tiempo de ejecución será constante, O(1). En promedio, el tiempo de
+ejecución será O(n log n) para árboles balanceados.

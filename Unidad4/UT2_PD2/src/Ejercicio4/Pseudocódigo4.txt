@@ -1,0 +1,26 @@
+Algoritmo invertir componentes de un vector
+Este algoritmo toma como entrada un array y dos elementos de este. Se intercambian los elementos del array entre ellos.
+
+Precondiciones:
+- A tiene elementos
+- i e j están contenidos en A
+
+Postcondiciones:
+- Los elementos entre i e j quedan intercambiados
+- El array tiene la misma cantidad de elementos
+
+Pseudocódigo:
+InvertirArray(A de tipo array de enteros, i de tipo entero, j de tipo entero) devuelve void
+
+Comienzo
+Si i < j hacer
+    Intercambiar A[i] con A[j]
+    InvertirArray(A, i + 1, j - 1)
+Fin si
+Fin
+
+El caso base es cuando i es mayor a j, es decir no se tiene que invertir más el array. Se contempla en
+Si i < j
+El algoritmo siempre progresa hacia el caso base porque en la llamada recursiva se hace con i + 1 y j - 1. O sea
+se llega en algún momento a que i > j
+
