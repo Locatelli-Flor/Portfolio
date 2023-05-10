@@ -1,0 +1,12 @@
+Clase Stack:
+    - Acceso LIFO
+    - Implementación de Java
+
+Orden:
+    - Push: O(1)
+    - Pop: O(1)
+    - Peek: O(1) retornar el primer elemento sin quitarlo
+    - empty: O(1)
+    - search: O(n) se recorre la pila desde el tope hasta el fondo
+
+Arreglo y nodos: NO

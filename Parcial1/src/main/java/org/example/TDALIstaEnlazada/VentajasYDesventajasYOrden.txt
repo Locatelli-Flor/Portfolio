@@ -1,0 +1,41 @@
+TDA lista puede implementarse con: LinkedList, Array, ArrayList, Lista enlazada simple
+
+ArrayList:
+- Dinámico: se redimensiona según se necesite espacio (dobla la cantidad de espacio)
+    - Rápido acceso a los elementos, operaciones más rápidas (búsqueda, inserción, eliminación)
+    - Redimensionar cuesta memoria, puede quedar memoria sin usar
+    - Capacidad por default: 10, se puede cambiar al inicializarla
+
+Orden:
+    - Agregar: caso promedio: O(1), peor caso: O(n) cuando se redimensiona
+    - Get: O(1)
+    - Quitar: O(1) mejor caso (eliminar el último), sino O(n) porque se deben mover a la izquierda los elementos
+    - Contiene: O(n_indice) se recorre toda la lista hasta encontrar
+    - Size: O(1)
+
+
+LinkedList:
+- No hay problema de redimensionamiento
+    - Encadenada doblemente: inserción y eliminaciones más rápidas que ArrayList
+    - Mejor manejo de memoria
+    - La búsqueda en ArrayList es más rápida si se conoce el índice
+    - En algunos casos no se utiliza el doble enlazamiento, por lo que puede consumir más memoria tener 2 referencias en cada nodo
+
+Orden:
+    - Agregar: O(1) se agrega al final (se tiene referencia del último elemento)
+    - Get: O(n_indice) se recorren todos los nodos hasta encontrar
+    - Quitar: O(n_indice) lo mismo que get
+    - Contiene: O(n), se recorre la lista hasta llegar
+    - Size: O(1)
+
+Lista enlazada simple:
+- No hay problema de redimensionamiento
+    - Encadenada simple: puede ahorrar memoria no tener referencia al anterior según al ejercicio
+    - Mejor manejo de memoria
+
+Orden:
+    - Agregar: O(1) Si se agrega al principio, O(n) si es al final
+    - Get: O(n_indice) Se recorre toda la lista
+    - Quitar: O(n_indice) Se recorre toda la lista
+    - Contiene: O(n) Se recorre la lista
+    - Size: O(n) Se recorre toda la lista para contar nodos

@@ -1,0 +1,26 @@
+TDA Cola se puede implementar con: Arreglo circular, Lista enlazada simple
+    - FIFO
+
+Arreglo circular:
+    - Acceso directo a los elementos
+    - Necesita redimensionamiento
+
+Orden:
+    - Poner en cola: O(1) cuando hay espacio, sino O(n) cuando se copia el arreglo y se hace otro
+    - Sacar de cola: O(1) cuando no está vacía
+    - Peek: O(1) si no está vacía
+    - esVacía: O(1)
+    - esLlena: O(1)
+
+Lista enlazada simple:
+    - Eficiente para agregar elementos al principio y al final
+    - No necesita redimensionamiento
+    - Más lenta para buscar
+    - Más memoria si se sabe cuantos elementos va a haber
+
+Orden:
+    - Poner en cola: O(1) cuando es al principio, sino O(n) cuando es al final
+    - Sacar de cola: O(1), se quita el del principio
+    - Peek: O(1) se retorna el elemento del principio
+    - esVacía: O(1)
+    - esLlena: O(1) Si se tiene una referencia del tamaño actual, sino O(n)
