@@ -1,0 +1,41 @@
+Trie:
+
+Atributos:
+
+	Raíz de tipo INodo (vacío)
+
+	Varios nodos de tipo INodoTrie (1 char)
+
+	Array alfabeto
+	
+	Array S conjunto de String s
+	
+
+Métodos:
+
+	Agregar(INodo) retorna bool
+
+	Buscar(INodo) retorna INodo
+
+	esVacio() retorna bool
+
+	retornarPaginas(INodoE) retorna Lista<int>
+
+NodoTrie:
+
+Atributos:
+
+	Array (tamaño 26) INodoTrie hijos
+
+	ArrayList indices
+
+	Char caractér
+
+
+Metodos:
+
+	esPalabra() retorna bool
+
+	buscarPalabra(INodo) retorna INodo
+
+	buscarPrefijo(INodo) retorna String[]

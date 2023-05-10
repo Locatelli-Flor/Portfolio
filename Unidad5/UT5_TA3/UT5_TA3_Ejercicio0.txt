@@ -1,0 +1,45 @@
+Este algoritmo retorna todas las palabras que contiene un prefijo dado en un árbol genérico.
+Se recorre el árbol buscando el nodo que contiene el último caractér del prefijo. Si algún
+caracter no se encuentra, el prefijo no está en el árbol, y se retorna una lista vacía. En
+caso contrario, se llama a un segundo método que dado este prefijo y el nodo, recorre todos
+los hijos de manera recursiva, hasta que encuentra un fin de palabra y se agrega a la lista. Esto
+se hace con un string que comienza siendo igual al prefijo, y se van agregando los caracteres
+de los hijos, hasta que sea una palabra.
+
+Precondiciones:
+- Que el arbol esté inicializado
+- El string no puede ser nulo
+
+Postcondiciones:
+- El trie no se modifica.
+- Si el prefijo está en el árbol, se agregan todas las palabras hijas.
+- Si el prefijo no está en el árbol se devuelve una lista vacía.
+
+
+Predecir(string unPrefijo) devuelve LinkedList
+nodoActual <- this
+Para cada char c en unPrefijo hacer
+	Si nodoActual es nulo hacer
+		devolver LinkedList
+	Fin si
+	nodoActual <- nodoActual.obtenerHijo(c)
+Fin para cada
+
+LinkedList <- nodoActual.BuscarPalabras(unPrefijo, LinkedList, unPrefijo)
+devolver LinkedList
+
+Fin
+
+BuscarPalabras(String unPrefijo, LinkedList, String aAgregar)
+Comienzo
+String original = aAgregar
+Para cada hijo h de this hacer
+	Si h.esPalabra hacer
+		LinkedList.agregar(aAgregar)
+		aAgregar <- original
+	Fin si
+	aAgregar <- aAgregar + h.caracter
+	h.BuscarPalabras(unPrefijo, LinkedList, aAgregar)
+Fin para
+devolver LinkedList
+Fin

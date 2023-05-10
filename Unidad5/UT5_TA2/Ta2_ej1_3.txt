@@ -1,0 +1,49 @@
+Algoritmo para dado un texto construir el índice del mismo en el trie:
+
+Este algoritmo recorre el texto identificando las palabras y agregandolas al trie en caso de que
+no estén. Si están, agrega un nuevo índice a la lista de la palabra.
+
+Precondiciones:
+- Las palabras no tienen tilde
+- El texto está escrito con el alfabeto latino
+- El alfabeto existe como array de Nodos con un char
+- El método obtenerPalabras devuelve un array de objetos con la palabra y sus índices dado un texto
+- El método agregarHijo existe y agrega un hijo a un nodo
+- El método agregarIndice existe y agrega un índice a la lista de un nodo
+- El constructor de Trie existe, no recibe parámetros y crea la raíz
+
+Postcondiciones:
+- Se crea el trie y se agregan todas las palabras posibles
+- El texto no es modificado
+- Cada palabra tiene todos los índices de ocurrencia
+
+Pseudocódigo:
+
+Insertar(object unaPalabra)
+Comienzo
+nodoActual <- this.raíz
+Para cada char c de unaPalabra.texto hacer
+	unHijo <- nodoActual.obtenerHijo(c)
+	Si unHijo == nulo entonces
+		unHijo <- new Nodo(c)
+		nodoActual.agregarHijo(unHijo, c)
+	Fin si
+	nodoActual <- unHijo
+Fin para
+nodoActual.agregarIndices(unaPalabra.indice)
+
+CrearTrie(String texto)
+Trie t = new Trie()
+Object[] palabras = obtenerPalabras(texto)
+Para cada palabra p en palabras hacer
+	Insertar(p)
+Fin para
+Fin
+
+Métodos adicionales:
+
+obtenerHijo(c) retorna Nodo
+Comienzo
+retornar this.hijos[getAscii(c)]
+Fin
+
