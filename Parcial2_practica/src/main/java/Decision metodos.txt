@@ -1,0 +1,59 @@
+Grafos dirigidos:
+
+Dijkstra con recuperación de caminos: 
+	- Camino mas corto entre 2 vértices
+	- Rutas óptimas en problemas de redes o transporte
+Floyd con recuperación de caminos:
+	- Camino mas corto entre todo par de vértices
+	-
+Excentricidad y centro del grafo:
+	- Máxima distancia mínima entre 2 vértices
+	- Vértice con excentricidad mínima
+	- Identificar vértices más centrales o importantes, redes y comunicación
+Warshall y cierre transitivo:
+	- Conectividad entre todos los pares de vértices
+	- Problemas relacionados con la conectividad y relación entre los vértices
+BPF:
+	- Recorre sistemáticamente todos los vértices de un grafo conexo
+	- Problemas donde se necesita explorar todo el grafo o realizar algún análisis de
+	  la estructura 
+Clasificación topológica:
+	- Ordenar los vértices de un grafo acíclico tal que cada vértice procesa a sus descendientes. (invertir flechas)
+	- Problemas donde es necesario establecer un orden o una secuencia de eventos o tareas
+
+
+Grafos no dirigidos:
+       - ¿ El grafo es conexo ? 
+		Si:
+			- ¿ Se requiere encontrar un AAM ?
+				Si:
+					Prim
+				No: 
+					- ¿ Se requiere identificar puntos de articulación ?
+						Si:
+							Algoritmo ptos articulación
+						No:
+							Siguiente pregunta
+
+
+			- ¿ Se requiere encontrar un AAM ?
+				Si:
+					Kruskal
+				No:
+					Fin
+		No:
+       			- ¿ Se necesita encontrar un camino entre 2 vértices ?
+				Si:	
+					- ¿ Se requiere el camino más corto ? 
+						Si :
+							BPA
+						No : 
+							BPF
+				No:
+					¿ Se necesita identificar ptos de articulación ?
+						Si:
+							Algoritmo ptos articulación
+						No:
+							Fin
+	
+			
