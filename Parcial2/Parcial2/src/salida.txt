@@ -1,0 +1,49 @@
+Materia: Calculo1     Costo: 4
+Materia: Calculo2     Costo: 2
+Materia: MatDiscreta     Costo: 2
+Materia: IntArtificial     Costo: 3
+Materia: Algebra1     Costo: 2
+Materia: AED2     Costo: 5
+Materia: TeoComp     Costo: 2
+Materia: IntArtificial     Costo: 3
+Materia: IngSoftware     Costo: 2
+Materia: IntroIngenieria     Costo: 1
+Materia: CommSkills     Costo: 1
+Materia: AED1     Costo: 2
+Materia: AED2     Costo: 5
+Materia: TeoComp     Costo: 2
+Materia: IntArtificial     Costo: 3
+Materia: IngSoftware     Costo: 2
+Materia: MatDiscreta     Costo: 2
+Materia: IntArtificial     Costo: 3
+Materia: Graduacion     Costo: 0
+
+Costo total: 46
+-----------------------------------------------------------------
+Materia: Calculo1        Costo: 4
+Materia: Calculo2        Costo: 2
+Materia: MatDiscreta        Costo: 2
+Materia: IntArtificial        Costo: 3
+Materia: Algebra1        Costo: 2
+Materia: AED2        Costo: 5
+Materia: TeoComp        Costo: 2
+Materia: IntArtificial        Costo: 3
+Materia: IngSoftware        Costo: 2
+Materia: Programacion2        Costo: 3
+Materia: AED1        Costo: 2
+Materia: MatDiscreta        Costo: 2
+Materia: IntArtificial        Costo: 3
+Materia: IntroIngenieria        Costo: 1
+Materia: CommSkills        Costo: 1
+Materia: AED1        Costo: 2
+Materia: AED2        Costo: 5
+Materia: TeoComp        Costo: 2
+Materia: IntArtificial        Costo: 3
+Materia: IngSoftware        Costo: 2
+Materia: Programacion2        Costo: 3
+Materia: MatDiscreta        Costo: 2
+Materia: IntArtificial        Costo: 3
+Materia: Graduacion        Costo: 0
+
+Costo total: 59
+-----------------------------------------------------------------
